@@ -6,7 +6,8 @@
 ## ***Description***
 ###  Welcome to Pangea, a game where you test your word country skills! This game has you guess the correct letters to discover the hidden country names. However, you only have a certain amount of guesses. If you don't guess the word in the amount of guesses given, you lose and Earth once again gets turned into Pangea!
 
-![Pangea Gif](https://media1.giphy.com/media/7gFhELYUTxsvC/giphy.gif?cid=790b7611b59e9be62e4407195e3a4ded6000e436cbed43ad&rid=giphy.gif&ct=g)
+![Pangea Gif](https://media1.giphy.com/media/7gFhELYUTxsvC/giphy.gif?cid=790b7611b59e9be62e4407195e3a4ded6000e436cbed43ad&rid=giphy.gif)
+
 ***
 ## ***Technologies***
 * MarkDown
