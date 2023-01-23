@@ -12,11 +12,13 @@ const wordList = {
 let playerInput = null
 let wordSpaces = null
 let chosenWord = null
+let pressedLetter = null
 
 const cntBtn = document.getElementById("countries")
 const occBtn = document.getElementById("occupations")
 const carBtn = document.getElementById("cars")
-
+const wordSpace = document.getElementById("wordSpace")
+const letters = document.querySelectorAll(".letter")
 
 
 
@@ -24,53 +26,69 @@ const carBtn = document.getElementById("cars")
 
 // For loop to determine which category button is clicked and return the words of that category.
 // Take a random index of the wordlist and return the innertext
-const chooseWord = (e) => {
-    cntBtn.addEventListener("click", () => {
-        chosenWord = wordList.countries[Math.floor(Math.random() * wordList.countries.length)];
-        let word = chosenWord.split("");
-        let wordSpaces = word.map((x) => {
-            return x = "_";
-        })
-        console.log(wordSpaces);
-    })
-
-    occBtn.addEventListener("click", () => {
-        chosenWord = wordList.occupations[Math.floor(Math.random() * wordList.occupations.length)];
-        let word = chosenWord.split("");
-        let wordSpaces = word.map((x) => {
-            return x = "_";
-        })
-        console.log(wordSpaces);
-    })
-
-    carBtn.addEventListener("click", () => {
-        chosenWord = wordList.carBrands[Math.floor(Math.random() * wordList.carBrands.length)];
-        let word = chosenWord.split("");
-        let wordSpaces = word.map((x) => {
-            return x = "_";
-        })
-        console.log(wordSpaces);
-    })
+// takes chosenword, splits into individual indicies, and returns "_" for each letter
+const chooseWord = () => {
+    chosenWord = wordList.countries[Math.floor(Math.random() * wordList.countries.length)];
+    console.log(chosenWord);
+    return chosenWord;
 }
 
-chooseWord()
-// document.getElementsByClassName("category").addEventListener("click", (e) => {
-//     if (EventTarget.id === "countries") {
-//         chosenWord = wordList.countries[Math.floor(Math.random() * wordList.countries.length)];
-//         return chosenWord;
-//     }
-//     else if (EventTarget.id === "occupations") {
-//         chosenWord = wordList.occupations[Math.floor(Math.random() * wordList.occupations.length)];
-//         return chosenWord;
-//     }
-//     else if (EventTarget.id === "cars") {
-//         chosenWord = wordList.carBrands[Math.floor(Math.random() * wordList.carBrands.length)];
-//         return chosenWord;
-//     }
+// Covers up the chosen word and displays it
+const maskWord = (chosenWord) => {
+    let word = chosenWord.split("");
+    let wordSpaces = word.map((x) => {
+        return x = "_";
+    })
+    wordSpace.innerHTML = wordSpaces
+}
+
+// Console log the letter for each button that is clicked
+const displayLetter = () => {
+    for (let i = 0; i < letters.length; i++) {
+        letters[i].addEventListener("click", (e) => {
+            pressedLetter = e.target.innerHTML
+            if (chosenWord.includes(pressedLetter)) {
+                console.log("Correct!");
+            }
+            else {
+                console.log("Incorrect!")
+            }
+        }
+    )}
+}
+    // if the pressed letter is within the string, console log Hello
+
+
+    chooseWord()
+    maskWord(chosenWord)
+    displayLetter()
+
+
+
+
+// If the inner text of the button with id "Letter" that is pressed, is within the chosen word, change that letter in masked word to the letter that was clicked.
+
+
+
+
+
+
+
+
+// occBtn.addEventListener("click", () => {
+//     chosenWord = wordList.occupations[Math.floor(Math.random() * wordList.occupations.length)];
+//     let word = chosenWord.split("");
+//     let wordSpaces = word.map((x) => {
+//         return x = "_";
+//     })
+//     console.log(wordSpaces);
 // })
 
-// console.log(chosenWord);
-
-
-// takes chosenword, splits into individual indicies, and returns "_" for each letter
-chooseWord()
+// carBtn.addEventListener("click", () => {
+//     chosenWord = wordList.carBrands[Math.floor(Math.random() * wordList.carBrands.length)];
+//     let word = chosenWord.split("");
+//     let wordSpaces = word.map((x) => {
+//         return x = "_";
+//     })
+//     console.log(wordSpaces);
+// })
