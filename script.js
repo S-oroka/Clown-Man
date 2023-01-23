@@ -3,7 +3,7 @@
 // 3. We need to create dictionary that has a bunch of words
 
 const wordList = {
-    countries: ["Azerbaijan", "Ethiopia", "Nicaragua", "Venezuela", "Djibouti", "Antigua and Barbuda", "Faroe Islands", "Iceland", "Tajikistan", "Tuvalu", "Argentina", "Germany", "Togo", "Palau"],
+    countries: ["Azerbaijan", "Ethiopia", "Nicaragua", "Venezuela", "Djibouti", "Antigua", "Iceland", "Tajikistan", "Tuvalu", "Argentina", "Germany", "Togo", "Palau"],
     occupations: ["Neurologist", "Pediatrician", "Othopedist", "Software Engineer", "Teacher", "Lawyer", "Counselor", "Psychaiatrist"],
     carBrands: ["Renault", "Volvo", "Audi", "Fiat", "Alfa Romeo", "Chevrolet", "Genesis", "Rolls Royce", "Volkswagen", "Citroen"]
 }
@@ -13,6 +13,8 @@ let playerInput = null
 let wordSpaces = null
 let chosenWord = null
 let pressedLetter = null
+let guessedLetters = []
+let guesses = 6
 
 const cntBtn = document.getElementById("countries")
 const occBtn = document.getElementById("occupations")
@@ -28,7 +30,7 @@ const letters = document.querySelectorAll(".letter")
 // Take a random index of the wordlist and return the innertext
 // takes chosenword, splits into individual indicies, and returns "_" for each letter
 const chooseWord = () => {
-    chosenWord = wordList.countries[Math.floor(Math.random() * wordList.countries.length)];
+    chosenWord = wordList.countries[Math.floor(Math.random() * wordList.countries.length)].toLowerCase();
     console.log(chosenWord);
     return chosenWord;
 }
@@ -46,7 +48,8 @@ const maskWord = (chosenWord) => {
 const displayLetter = () => {
     for (let i = 0; i < letters.length; i++) {
         letters[i].addEventListener("click", (e) => {
-            pressedLetter = e.target.innerHTML
+            pressedLetter = e.target.innerHTML.toLowerCase()
+            guessedLetters.push(pressedLetter)
             if (chosenWord.includes(pressedLetter)) {
                 console.log("Correct!");
             }
