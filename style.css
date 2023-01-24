@@ -1,0 +1,18 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#letterSpaces {
+    display: block;
+    margin: 20px 10px;
+    
+}
+
+
+#wordSpace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}

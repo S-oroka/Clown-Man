@@ -11,7 +11,8 @@ const wordList = {
 
 let playerInput = null
 let wordSpaces = null
-let chosenWord = null
+let chosenWord = wordList.countries[Math.floor(Math.random() * wordList.countries.length)].toLowerCase();
+let maskedWord = chosenWord.replace(/[a-z]/g, " _")
 let pressedLetter = null
 let guessedLetters = []
 let guesses = 6
@@ -23,27 +24,6 @@ const wordSpace = document.getElementById("wordSpace")
 const letters = document.querySelectorAll(".letter")
 
 
-
-//Functions
-
-// For loop to determine which category button is clicked and return the words of that category.
-// Take a random index of the wordlist and return the innertext
-// takes chosenword, splits into individual indicies, and returns "_" for each letter
-const chooseWord = () => {
-    chosenWord = wordList.countries[Math.floor(Math.random() * wordList.countries.length)].toLowerCase();
-    console.log(chosenWord);
-    return chosenWord;
-}
-
-// Covers up the chosen word and displays it
-const maskWord = (chosenWord) => {
-    let word = chosenWord.split("");
-    let wordSpaces = word.map((x) => {
-        return x = "_";
-    })
-    wordSpace.innerHTML = wordSpaces
-}
-
 // Console log the letter for each button that is clicked
 const displayLetter = () => {
     for (let i = 0; i < letters.length; i++) {
@@ -51,47 +31,25 @@ const displayLetter = () => {
             pressedLetter = e.target.innerHTML.toLowerCase()
             guessedLetters.push(pressedLetter)
             if (chosenWord.includes(pressedLetter)) {
-                console.log("Correct!");
+                let word = chosenWord.split("");
+                for (let i = 0; i < word.length; i++) {
+                    if (word[i] === pressedLetter) {
+    
+                    }
+                }
             }
             else {
-                console.log("Incorrect!")
+
+                guesses -= 1
             }
         }
-    )}
+        )
+    }
 }
-    // if the pressed letter is within the string, console log Hello
+// if the pressed letter is within the string, console log Hello
 
 
-    chooseWord()
-    maskWord(chosenWord)
-    displayLetter()
-
+displayLetter()
 
 
 
-// If the inner text of the button with id "Letter" that is pressed, is within the chosen word, change that letter in masked word to the letter that was clicked.
-
-
-
-
-
-
-
-
-// occBtn.addEventListener("click", () => {
-//     chosenWord = wordList.occupations[Math.floor(Math.random() * wordList.occupations.length)];
-//     let word = chosenWord.split("");
-//     let wordSpaces = word.map((x) => {
-//         return x = "_";
-//     })
-//     console.log(wordSpaces);
-// })
-
-// carBtn.addEventListener("click", () => {
-//     chosenWord = wordList.carBrands[Math.floor(Math.random() * wordList.carBrands.length)];
-//     let word = chosenWord.split("");
-//     let wordSpaces = word.map((x) => {
-//         return x = "_";
-//     })
-//     console.log(wordSpaces);
-// })
