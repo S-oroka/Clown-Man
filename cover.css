@@ -19,6 +19,6 @@ span {
 }
 
 button {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    margin: auto;
 }

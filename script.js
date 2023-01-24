@@ -31,9 +31,10 @@ wordSpace.innerHTML = maskedLetters
 
 
 // Console log the letter for each button that is clicked
-const displayLetter = () => {
+const startGame = () => {
     for (let i = 0; i < letters.length; i++) {
         letters[i].addEventListener("click", (e) => {
+            letters[i].style.display = "none"
             pressedLetter = e.target.innerHTML.toLowerCase()
             guessedLetters.push(pressedLetter)
             if (chosenWord.includes(pressedLetter)) {
@@ -52,6 +53,7 @@ const displayLetter = () => {
             }
             else {
                 guesses -= 1
+                // if letter has been clicked, don't subtract from guesses
                 remainGuess.innerHTML = "Remaining Guesses: " + guesses
                 if (guesses <= 0) {
                     remainGuess.innerHTML = "You lose :( Try again!"
@@ -65,16 +67,7 @@ const displayLetter = () => {
 
 const reset = () => {
     resetButton.addEventListener('click', () => {
-        let wordSpaces = null
-        let chosenWord = wordList.countries[Math.floor(Math.random() * wordList.countries.length)].toLowerCase();
-        let maskedWord = chosenWord.replace(/[a-z]/g, "_")
-        let maskedLetters = maskedWord.split("")
-        let pressedLetter = null
-        let guessedLetters = []
-        let guesses = 6
-        console.log(chosenWord);
-        remainGuess.innerHTML = "Remaining Guesses: " + guesses
-        wordSpace.innerHTML = maskedLetters
+        location.reload()
     })
 }
 
@@ -84,7 +77,6 @@ const reset = () => {
 
 
 
-displayLetter()
+startGame()
 reset()
-
 
