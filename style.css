@@ -3,6 +3,14 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+#guessesRemaining {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    font-size: 20px;
+}
+
 #letterSpaces {
     position: relative;
     margin: 0 auto;
@@ -23,5 +31,12 @@ h1 {
     justify-content: center;
     align-items: center;
     font-size: 50px;
+    margin-top: 10%;
+}
+
+#reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 10%;
 }
