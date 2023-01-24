@@ -29,6 +29,7 @@ const resetButton = document.getElementById("reset")
 remainGuess.innerHTML = "Remaining Guesses: " + guesses
 wordSpace.innerHTML = maskedLetters
 
+
 // Console log the letter for each button that is clicked
 const displayLetter = () => {
     for (let i = 0; i < letters.length; i++) {
@@ -40,9 +41,12 @@ const displayLetter = () => {
                     // for every letter in chosen word, if that index is = the letter pressed
                     // the index of masked letters is also equal to the letter pressed
                     if (chosenWord[i] === pressedLetter) {
-                        maskedLetters[i] = pressedLetter 
+                        maskedLetters[i] = pressedLetter
                         wordSpace.innerHTML = maskedLetters
-                        
+                        if (guesses >= 0 && !maskedLetters.includes("_")) {
+                            remainGuess.innerHTML = "You win! Press the button below to restart!"
+                        }
+
                     }
                 }
             }
@@ -50,7 +54,8 @@ const displayLetter = () => {
                 guesses -= 1
                 remainGuess.innerHTML = "Remaining Guesses: " + guesses
                 if (guesses <= 0) {
-                    remainGuess.innerHTML = "You lose :("
+                    remainGuess.innerHTML = "You lose :( Try again!"
+
                 }
             }
         }
@@ -59,14 +64,27 @@ const displayLetter = () => {
 }
 
 const reset = () => {
-    resetButton.addEventListener('click', (displayLetter))
+    resetButton.addEventListener('click', () => {
+        let wordSpaces = null
+        let chosenWord = wordList.countries[Math.floor(Math.random() * wordList.countries.length)].toLowerCase();
+        let maskedWord = chosenWord.replace(/[a-z]/g, "_")
+        let maskedLetters = maskedWord.split("")
+        let pressedLetter = null
+        let guessedLetters = []
+        let guesses = 6
+        console.log(chosenWord);
+        remainGuess.innerHTML = "Remaining Guesses: " + guesses
+        wordSpace.innerHTML = maskedLetters
+    })
 }
 
 // if the pressed letter is within the string, console log Hello
 // for every index in maskedword, replace the _ with the pressed letter within chosenWord
 // grab the index of the pressed letter in chosenWord and store it in variable
-reset()
-displayLetter()
 
+
+
+displayLetter()
+reset()
 
 
