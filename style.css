@@ -4,15 +4,24 @@ h1 {
     align-items: center;
 }
 #letterSpaces {
-    display: block;
-    margin: 20px 10px;
-    
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10%;
+    max-width: 400px;
+    text-align: center;
+    border: 3px solid grey;
+    border-radius: 12%;
 }
 
+.letter {
+    font-size: 20px;
+    margin: 10px 10px;
+}
 
 #wordSpace {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 50px;
+    margin-top: 10%;
 }

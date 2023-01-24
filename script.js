@@ -23,6 +23,7 @@ const carBtn = document.getElementById("cars")
 const wordSpace = document.getElementById("wordSpace")
 const letters = document.querySelectorAll(".letter")
 
+wordSpace.innerHTML = maskedWord
 
 // Console log the letter for each button that is clicked
 const displayLetter = () => {
