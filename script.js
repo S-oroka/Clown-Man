@@ -47,8 +47,10 @@ const startGame = () => {
                         wordSpace.innerHTML = maskedLetters
                         if (guesses >= 0 && !maskedLetters.includes("_")) {
                             remainGuess.innerHTML = "You win! Nice Job!"
+                            }
+                        else if (guesses >= 1 && !maskedLetters.includes("_")) {
+                                remainGuess.innerHTML = "You win! The Earth was mostly saved!"
                         }
-
                     }
                 }
             }
