@@ -25,6 +25,7 @@ const wordSpace = document.getElementById("wordSpace")
 const letters = document.querySelectorAll(".letter")
 const remainGuess = document.getElementById("guessesRemaining")
 const resetButton = document.getElementById("reset")
+const image = document.querySelector("img")
 
 remainGuess.innerHTML = "Remaining Guesses: " + guesses
 wordSpace.innerHTML = maskedLetters
@@ -45,7 +46,7 @@ const startGame = () => {
                         maskedLetters[i] = pressedLetter
                         wordSpace.innerHTML = maskedLetters
                         if (guesses >= 0 && !maskedLetters.includes("_")) {
-                            remainGuess.innerHTML = "You win! Press the button below to restart!"
+                            remainGuess.innerHTML = "You win! Nice Job!"
                         }
 
                     }
@@ -53,6 +54,26 @@ const startGame = () => {
             }
             else {
                 guesses -= 1
+                if (guesses === 5) {
+                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Clown-Man/Pangea Pics/1.jpg"
+                    
+                }
+                else if (guesses === 4) {
+                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Clown-Man/Pangea Pics/2.jpg"
+                    
+                }
+                else if (guesses === 3) {
+                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Clown-Man/Pangea Pics/3.jpeg"
+                }
+                else if (guesses === 2) {
+                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Clown-Man/Pangea Pics/4.jpg"
+                }
+                else if (guesses === 1) {
+                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Clown-Man/Pangea Pics/4.jpg"
+                }
+                else if (guesses === 0) {
+                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Clown-Man/Pangea Pics/5.jpg"
+                }
                 // if letter has been clicked, don't subtract from guesses
                 remainGuess.innerHTML = "Remaining Guesses: " + guesses
                 if (guesses <= 0) {
