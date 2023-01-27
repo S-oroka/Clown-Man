@@ -83,7 +83,7 @@ const startGame = () => {
                 // if letter has been clicked, don't subtract from guesses
                 remainGuess.innerHTML = "Remaining Guesses: " + guesses
                 if (guesses <= 0) {
-                    remainGuess.innerHTML = "You lose, Earth has turned into Pangea :( Try again!"
+                    remainGuess.innerHTML = `You lose, Earth has turned into Pangea. :( The correct country was ${chosenWord.toUpperCase()}, try again!`
 
                 }
             }
