@@ -5,16 +5,15 @@
 ***
 ## ***Description***
 ###  Welcome to Pangea, a game where you test your word country skills! This game has you guess the correct letters to discover the hidden country names. However, you only have a certain amount of guesses. If you don't guess the word in the amount of guesses given, you lose and Earth once again gets turned into Pangea!
-### In this game, I draw from my love of countries and geography to create a letter guessing game. I hope you enjoy playing 
 
 ![Pangea Gif](https://media4.giphy.com/media/VI2UC13hwWin1MIfmi/giphy.gif?cid=ecf05e47ea87fe7y37voiejtjis2k9o57o2p90tnikpb9xm9&rid=giphy.gif&ct=g)
 
 ***
 ## ***Technologies***
-* MarkDown
+* JavaScript
 * HTML
 * CSS
-* JavaScript
+* MarkDown
 * VS Code
 * Git
 ***
@@ -29,6 +28,7 @@
 * If the selected letter was not in the chosen word, I decresed the guesses by 1 and updated the picture to reflect how many guesses were left.
 * I also made sure to not decrese the guess count after a correct letter was selected
 * Finally, I added a reset function which was linked to the reset button at the bottom of the game page.
+***
 ## ***Checklist***
 * [X] Utilize flexbox or grid
 * [X] Include 2 HTML files with navigation between them

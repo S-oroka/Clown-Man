@@ -1,12 +1,7 @@
-// 1. function to start the game
-// 2. Create array to type letters into
-// 3. We need to create dictionary that has a bunch of words
-
 const wordList = {
     countries: ["Azerbaijan", "Ethiopia", "Nicaragua", "Venezuela", "Djibouti", "Antigua", "Iceland", "Tajikistan", "Tuvalu", "Argentina", "Germany", "Togo", "Palau"],
 }
 
-let wordSpaces = null
 let chosenWord = wordList.countries[Math.floor(Math.random() * wordList.countries.length)].toLowerCase();
 let maskedWord = chosenWord.replace(/[a-z]/g, "_")
 let maskedLetters = maskedWord.split("")
@@ -25,7 +20,6 @@ const image = document.querySelector("img")
 remainGuess.innerHTML = "Remaining Guesses: " + guesses
 wordSpace.innerHTML = maskedLetters
 
-
 // Function to start the game
 const startGame = () => {
     for (let i = 0; i < letters.length; i++) {
@@ -41,9 +35,9 @@ const startGame = () => {
                         wordSpace.innerHTML = maskedLetters
                         if (guesses === 0 && !maskedLetters.includes("_")) {
                             remainGuess.innerHTML = "You win! But the Earth almost turned into Pangea again!"
-                            }
+                        }
                         else if (guesses === 1 && !maskedLetters.includes("_")) {
-                                remainGuess.innerHTML = "You win! But the Earth almost turned into Pangea again!"
+                            remainGuess.innerHTML = "You win! But the Earth almost turned into Pangea again!"
                         }
                         else if (guesses === 2 && !maskedLetters.includes("_")) {
                             remainGuess.innerHTML = "You win! The Earth was mostly saved!"
@@ -68,11 +62,11 @@ const startGame = () => {
                 guesses -= 1
                 if (guesses === 5) {
                     image.src = "./pangeaPics/1.jpg"
-                    
+
                 }
                 else if (guesses === 4) {
                     image.src = "./pangeaPics/2.jpg"
-                    
+
                 }
                 else if (guesses === 3) {
                     image.src = "./pangeaPics/3.jpeg"
@@ -93,8 +87,7 @@ const startGame = () => {
 
                 }
             }
-        }
-        )
+        })
     }
 }
 
