@@ -9,10 +9,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
     background-image: url("https://media4.giphy.com/media/VI2UC13hwWin1MIfmi/giphy.gif?cid=ecf05e47ea87fe7y37voiejtjis2k9o57o2p90tnikpb9xm9&rid=giphy.gif&ct=g");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position-y: center;
 }
 
 h1 {

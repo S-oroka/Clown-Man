@@ -11,7 +11,6 @@ let chosenWord = wordList.countries[Math.floor(Math.random() * wordList.countrie
 let maskedWord = chosenWord.replace(/[a-z]/g, "_")
 let maskedLetters = maskedWord.split("")
 let pressedLetter = null
-let guessedLetters = []
 let guesses = 6
 
 const cntBtn = document.getElementById("countries")
@@ -33,10 +32,9 @@ const startGame = () => {
         letters[i].addEventListener("click", (e) => {
             letters[i].style.display = "none"
             pressedLetter = e.target.innerHTML.toLowerCase()
-            guessedLetters.push(pressedLetter)
             if (chosenWord.includes(pressedLetter)) {
                 for (let i = 0; i < chosenWord.length; i++) {
-                    // for every letter in chosen word, if that index is = the letter pressed
+                    // for every letter in chosen word, if that index is equal to the letter pressed
                     // the index of masked letters is also equal to the letter pressed
                     if (chosenWord[i] === pressedLetter) {
                         maskedLetters[i] = pressedLetter
@@ -54,7 +52,7 @@ const startGame = () => {
                             remainGuess.innerHTML = "You win! The Earth changed quite a bit!"
                         }
                         else if (guesses === 4 && !maskedLetters.includes("_")) {
-                            remainGuess.innerHTML = "You win! The Earth shifted a bit though!"
+                            remainGuess.innerHTML = "You win! `The Earth shifted a bit though!"
                         }
                         else if (guesses === 5 && !maskedLetters.includes("_")) {
                             remainGuess.innerHTML = "Amazing job! You saved the Earth from moving!"
@@ -65,27 +63,28 @@ const startGame = () => {
                     }
                 }
             }
+            // Else if user input is not in chosen word:
             else {
                 guesses -= 1
                 if (guesses === 5) {
-                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Pangea/Pangea Pics/1.jpg"
+                    image.src = "./pangeaPics/1.jpg"
                     
                 }
                 else if (guesses === 4) {
-                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Pangea/Pangea Pics/2.jpg"
+                    image.src = "./pangeaPics/2.jpg"
                     
                 }
                 else if (guesses === 3) {
-                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Pangea/Pangea Pics/3.jpeg"
+                    image.src = "./pangeaPics/3.jpeg"
                 }
                 else if (guesses === 2) {
-                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Pangea/Pangea Pics/4.jpg"
+                    image.src = "./pangeaPics/4.jpg"
                 }
                 else if (guesses === 1) {
-                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Pangea/Pangea Pics/4.jpg"
+                    image.src = "./pangeaPics/4.jpg"
                 }
                 else if (guesses === 0) {
-                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Pangea/Pangea Pics/5.jpg"
+                    image.src = "./pangeaPics/5.jpg"
                 }
                 // if letter has been clicked, don't subtract from guesses
                 remainGuess.innerHTML = "Remaining Guesses: " + guesses
