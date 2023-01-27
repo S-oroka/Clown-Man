@@ -4,10 +4,7 @@
 
 const wordList = {
     countries: ["Azerbaijan", "Ethiopia", "Nicaragua", "Venezuela", "Djibouti", "Antigua", "Iceland", "Tajikistan", "Tuvalu", "Argentina", "Germany", "Togo", "Palau"],
-    occupations: ["Neurologist", "Pediatrician", "Othopedist", "Software Engineer", "Teacher", "Lawyer", "Counselor", "Psychaiatrist"],
-    carBrands: ["Renault", "Volvo", "Audi", "Fiat", "Alfa Romeo", "Chevrolet", "Genesis", "Rolls Royce", "Volkswagen", "Citroen"]
 }
-
 
 let wordSpaces = null
 let chosenWord = wordList.countries[Math.floor(Math.random() * wordList.countries.length)].toLowerCase();
@@ -45,11 +42,26 @@ const startGame = () => {
                     if (chosenWord[i] === pressedLetter) {
                         maskedLetters[i] = pressedLetter
                         wordSpace.innerHTML = maskedLetters
-                        if (guesses >= 0 && !maskedLetters.includes("_")) {
-                            remainGuess.innerHTML = "You win! Nice Job!"
+                        if (guesses === 0 && !maskedLetters.includes("_")) {
+                            remainGuess.innerHTML = "You win! But the Earth almost turned into Pangea again!"
                             }
-                        else if (guesses >= 1 && !maskedLetters.includes("_")) {
-                                remainGuess.innerHTML = "You win! The Earth was mostly saved!"
+                        else if (guesses === 1 && !maskedLetters.includes("_")) {
+                                remainGuess.innerHTML = "You win! But the Earth almost turned into Pangea again!"
+                        }
+                        else if (guesses === 2 && !maskedLetters.includes("_")) {
+                            remainGuess.innerHTML = "You win! The Earth was mostly saved!"
+                        }
+                        else if (guesses === 3 && !maskedLetters.includes("_")) {
+                            remainGuess.innerHTML = "You win! The Earth changed quite a bit!"
+                        }
+                        else if (guesses === 4 && !maskedLetters.includes("_")) {
+                            remainGuess.innerHTML = "You win! The Earth shifted a bit though!"
+                        }
+                        else if (guesses === 5 && !maskedLetters.includes("_")) {
+                            remainGuess.innerHTML = "Amazing job! You saved the Earth from moving!"
+                        }
+                        else if (guesses === 6 && !maskedLetters.includes("_")) {
+                            remainGuess.innerHTML = "Amazing job! You saved the Earth from moving!"
                         }
                     }
                 }
@@ -79,7 +91,7 @@ const startGame = () => {
                 // if letter has been clicked, don't subtract from guesses
                 remainGuess.innerHTML = "Remaining Guesses: " + guesses
                 if (guesses <= 0) {
-                    remainGuess.innerHTML = "You lose :( Try again!"
+                    remainGuess.innerHTML = "You lose, Earth has turned into Pangea :( Try again!"
 
                 }
             }
