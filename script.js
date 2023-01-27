@@ -68,24 +68,24 @@ const startGame = () => {
             else {
                 guesses -= 1
                 if (guesses === 5) {
-                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Clown-Man/Pangea Pics/1.jpg"
+                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Pangea/Pangea Pics/1.jpg"
                     
                 }
                 else if (guesses === 4) {
-                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Clown-Man/Pangea Pics/2.jpg"
+                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Pangea/Pangea Pics/2.jpg"
                     
                 }
                 else if (guesses === 3) {
-                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Clown-Man/Pangea Pics/3.jpeg"
+                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Pangea/Pangea Pics/3.jpeg"
                 }
                 else if (guesses === 2) {
-                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Clown-Man/Pangea Pics/4.jpg"
+                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Pangea/Pangea Pics/4.jpg"
                 }
                 else if (guesses === 1) {
-                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Clown-Man/Pangea Pics/4.jpg"
+                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Pangea/Pangea Pics/4.jpg"
                 }
                 else if (guesses === 0) {
-                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Clown-Man/Pangea Pics/5.jpg"
+                    image.src = "/Users/jakubsoroka/Desktop/Bootcamp/Projects/Pangea/Pangea Pics/5.jpg"
                 }
                 // if letter has been clicked, don't subtract from guesses
                 remainGuess.innerHTML = "Remaining Guesses: " + guesses
