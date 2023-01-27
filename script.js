@@ -13,7 +13,6 @@ let maskedLetters = maskedWord.split("")
 let pressedLetter = null
 let guessedLetters = []
 let guesses = 6
-console.log(chosenWord);
 
 const cntBtn = document.getElementById("countries")
 const occBtn = document.getElementById("occupations")
@@ -28,7 +27,7 @@ remainGuess.innerHTML = "Remaining Guesses: " + guesses
 wordSpace.innerHTML = maskedLetters
 
 
-// Console log the letter for each button that is clicked
+// Function to start the game
 const startGame = () => {
     for (let i = 0; i < letters.length; i++) {
         letters[i].addEventListener("click", (e) => {
@@ -105,12 +104,6 @@ const reset = () => {
         location.reload()
     })
 }
-
-// if the pressed letter is within the string, console log Hello
-// for every index in maskedword, replace the _ with the pressed letter within chosenWord
-// grab the index of the pressed letter in chosenWord and store it in variable
-
-
 
 startGame()
 reset()

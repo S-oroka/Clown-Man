@@ -41,4 +41,5 @@ span {
 button {
     display: grid;
     margin: auto;
+    margin-top: 50%;
 }
