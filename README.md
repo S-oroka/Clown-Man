@@ -1,10 +1,15 @@
 # **Pangea**
 ### Date 1/21/2023
 ### By: Jakub Soroka
-#### [LinkedIn](www.linkedin.com/in/jakubsoroka) | [Send me an Email](mailto:jsorokaGIS@gmail.com)
+#### [LinkedIn](https://www.linkedin.com/in/jakubsoroka) | [Send me an Email](mailto:jsorokaGIS@gmail.com)
 ***
 ## ***Description***
-###  Welcome to Pangea, a game where you test your word country skills! This game has you guess the correct letters to discover the hidden country names. However, you only have a certain amount of guesses. If you don't guess the word in the amount of guesses given, you lose and Earth once again gets turned into Pangea!
+###  Welcome to Pangea, a game where you test your word country skills! This game has you guess the correct letters to discover the hidden country names. However, you only have a certain amount of guesses. If you don't guess the word in the amount of guesses given, you lose and Earth once again gets turned into Pangea! 
+<br/>
+
+## [Click to play Pangea!](https://pangea.surge.sh)
+
+<br/>
 
 ![Pangea Gif](https://media4.giphy.com/media/VI2UC13hwWin1MIfmi/giphy.gif?cid=ecf05e47ea87fe7y37voiejtjis2k9o57o2p90tnikpb9xm9&rid=giphy.gif&ct=g)
 
@@ -15,7 +20,6 @@
 * CSS
 * MarkDown
 * VS Code
-* Git
 ***
 
 ## ***My Project's Journey*** ##
